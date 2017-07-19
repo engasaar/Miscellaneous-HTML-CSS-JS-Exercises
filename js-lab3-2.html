@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>js-Lab2</title>
+</head>
+
+<body>
+    <script>
+        var sum = 0;
+        while (x != 0) {
+            var x = parseInt(prompt("enter your number", ""));
+            if (isFinite(x)){ 
+                sum += x;
+            }
+            else{ 
+                alert("please enter number");
+            }
+        }
+        document.write("your result is:" + sum);
+        if (sum > 100) document.write("<br />your result exceeds 100");
+        else document.write("<br />your result less than 100");
+    </script>
+</body>
+
+</html>

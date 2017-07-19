@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>js-Lab4-Hiphop</title>
+</head>
+
+<body>
+    <script>
+        var st, x, y, childWin, flag = 0;
+        var txt = "Hi lets play";
+        //    childWin.moveTo(1300, 600);
+        function startPlay() {
+            x = 0;
+            y = 0;
+            childWin = open("", "", "width=300, height=250");
+            childWin.document.body.innerHTML = txt;
+            st = setInterval(function () {
+                if (childWin.closed) {
+                    clearInterval(st);
+                }
+                if ((x >= 0 && x <= 600 && flag == 0) || x < 0) {
+                    x = x + 10;
+                    y = y + 10;
+                    childWin.moveTo(x, y);
+                    childWin.focus();
+                    flag = 0;
+                }
+                else if ((x > 600 && x <= 1300 && flag == 0)) {
+                    x = x + 10;
+                    y = y - 10;
+                    childWin.moveTo(x, y);
+                    childWin.focus();
+                    flag = 0;
+                }
+                else if ((x > 600 && flag == 1) || x > 1300) {
+                    x = x - 10;
+                    y = y + 10;
+                    childWin.moveTo(x, y);
+                    childWin.focus();
+                    flag = 1;
+                }
+                else if (x < 600 || flag == 1) {
+                    x = x - 10;
+                    y = y - 10;
+                    childWin.moveTo(x, y);
+                    childWin.focus();
+                    flag = 1;
+                }
+            }, 1);
+        }
+
+        function stopPlay() {
+            clearInterval(st);
+            childWin.close();
+        }
+    </script>
+</body>
+<input type="button" value="start" onclick=startPlay()>
+<input type="button" value="Stop" onclick=stopPlay()>
+   
+
+</html>

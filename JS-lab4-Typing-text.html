@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Java script Lab4 - writing text</title>
+</head>
+
+<body>
+    <script>
+        var txt = "";
+        var chIndex = 0;
+        var str = "Hello My name is Ahmed Samir Iam ITI student and Iam proud of being in ITI";
+
+        function typeText() {
+            txt += str.charAt(chIndex++);
+            if (txt.length >= 0) {
+                childWin.document.body.innerHTML = txt.toString();
+            };
+            if (txt.length == str.length) {
+                childWin.window.clearInterval(clrInt);
+                childWin.close();
+            };
+        }
+        childWin = open("", "", "width=300, height=250");
+        var clrInt = childWin.setInterval(typeText, 300);
+    </script>
+</body>
+
+</html>

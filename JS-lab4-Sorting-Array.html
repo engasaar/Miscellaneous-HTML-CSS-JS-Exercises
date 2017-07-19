@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>js-Lab4-Sorting Array</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        for (i = 0; i < 5; i++) {
+            arr[i] = parseInt(prompt("enter your number", ""));
+            /* if (isFinite(arr[i])) {}
+             else {
+                 alert("please enter number");
+             }*/
+        }
+        document.write("<h1>Sorting</h1><hr />");
+        document.write("<b>you have entered the values of :</b>".fontcolor("blue") + arr.join(" , "));
+        // for (i = 0; i < 5; i++) document.write(arr[i] + ",");
+        arr = arr.sort(function (a, b) {  return a - b;  });
+        document.write("<br/><br/><b>your values after sorting ascending :</b>".fontcolor("blue")+ arr.join(","));
+        // for (i = 0; i < 5; i++) document.write(arr[i] + ",");
+        arr = arr.reverse();
+        document.write("<br/><br/><b>your values after sorting descending :</b>".fontcolor("blue") + arr.join(","));
+        //for (i = 0; i < 5; i++) document.write(arr[i] + ",");
+    </script>
+</body>
+
+</html>

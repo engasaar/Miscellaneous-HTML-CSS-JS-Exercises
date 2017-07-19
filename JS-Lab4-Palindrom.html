@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>js-Lab4-Palindrom</title>
+</head>
+
+<body>
+    <script>
+        var str = prompt("please enter your string", "");
+        var str1 = str.toUpperCase();
+        var str2 = str1.split('');
+        var str3 = str2.reverse();
+        var newStr = str3.join('');
+        document.write(newStr);
+        if (str1 == newStr) {
+            alert(str1 + " is palindrom");
+        }
+        else {
+            alert(str1 + " is NOT palindrom");
+        }
+    </script>
+</body>
+
+</html>

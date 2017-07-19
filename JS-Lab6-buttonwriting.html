@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>js-Lab6-button writing</title>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="0" onclick="numType(this)" />
+        <input type="button" value="1" onclick=numType(this) />
+        <input type="button" value="2" onclick=numType(this) />
+        <input type="button" value="3" onclick=numType(this) />
+        <input type="button" value="4" onclick=numType(this) />
+        <input type="button" value="5" onclick=numType(this) />
+        <input type="button" value="6" onclick=numType(this) />
+        <input type="button" value="7" onclick=numType(this) />
+        <input type="button" value="8" onclick=numType(this) />
+        <input type="button" value="9" onclick=numType(this) />
+        <input type="button" value="." onclick=numType(this) />
+        <input type="text" id=txt1 />
+        <input type="button" value="<<" onclick=clearNum() />
+        <input type="reset" value="C" /> </form>
+    <script>
+        function numType(elem) {
+            document.getElementById("txt1").value += elem.value;
+        }
+
+        function clearNum() {
+            var str = document.getElementById("txt1").value;
+            var str2=str.substring(0, str.length - 1);
+            document.getElementById("txt1").value=str2;
+        }
+    </script>
+</body>
+
+</html>
